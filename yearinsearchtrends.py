@@ -38,7 +38,7 @@ def get_interest_over_time(
     chunks = chunk_generator(keywords, chunksize)
 
     df = pd.DataFrame(columns=["date"])
-    pytrends = TrendReq(tz=360)
+    pytrends = TrendReq(tz=704)
     for chunk in chunks:
         pytrends.build_payload(chunk, cat=cat, geo=geo, timeframe=timeframe)
         df_chunk = pytrends.interest_over_time()
